@@ -67,13 +67,13 @@ namespace practica4.Controllers
 
                     _context.DbSetContactos.Add(contacto);
                     _context.SaveChanges();
-                    _logger.LogInformation("Se registró el contacto");
-                    ViewData["Message"] = "Se registró el contacto";
+                    _logger.LogInformation("Se registró en el formulario");
+                    ViewData["Message"] = "Se registró el formulario";
                 }
                 catch (Exception ex)
                 {
-                    _logger.LogError(ex, "Error al registrar el contacto");
-                    ViewData["Message"] = "Error al registrar el contacto: " + ex.Message;
+                    _logger.LogError(ex, "Error al registrar el formulario");
+                    ViewData["Message"] = "Error al registrar el formulario: " + ex.Message;
                 }
             }
             else

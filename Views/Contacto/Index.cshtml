@@ -1,7 +1,7 @@
 @model practica4.Models.Contacto
 
 @{
-    ViewData["Title"] = "Contacto";
+    ViewData["Title"] = "Formulario";
 }
 
 <!-- Modal de búsqueda -->
@@ -24,7 +24,7 @@
 <!-- Contenido principal -->
 <div class="container-fluid bg-light py-5">
     <div class="col-md-6 m-auto text-center">
-        <h1 class="h1">Formulario de Contacto</h1>
+        <h1 class="h1">Formulario</h1>
     </div>
 </div>
 
@@ -34,24 +34,44 @@
         <form method="post" asp-action="Registrar">
             <!-- Campo de Nombres -->
             <div class="form-group">
-                <label asp-for="Nombres" class="control-label"></label>
+                <label asp-for="Nombres" class="control-label">Nombre Completo</label>
                 <input asp-for="Nombres" class="form-control" />
                 <span asp-validation-for="Nombres" class="text-danger"></span>
             </div>
 
             <!-- Campo de Email -->
             <div class="form-group mt-2">
-                <label asp-for="Email" class="control-label"></label>
+                <label asp-for="Email" class="control-label">Correo Electrónico</label>
                 <input asp-for="Email" class="form-control" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
 
+            <!-- Campo de Teléfono -->
+            <div class="form-group mt-2">
+                <label asp-for="Telefono" class="control-label">Teléfono</label>
+                <input asp-for="Telefono" class="form-control" />
+                <span asp-validation-for="Telefono" class="text-danger"></span>
+            </div>
+
+            <!-- Campo de Dirección -->
+            <div class="form-group mt-2">
+                <label asp-for="Direccion" class="control-label">Dirección</label>
+                <input asp-for="Direccion" class="form-control" />
+                <span asp-validation-for="Direccion" class="text-danger"></span>
+            </div>
+
+            <!-- Campo de Asunto -->
+            
+
             <!-- Campo de Mensaje -->
             <div class="form-group mt-2">
-                <label asp-for="Mensaje" class="control-label"></label>
+                <label asp-for="Mensaje" class="control-label">Mensaje</label>
                 <textarea asp-for="Mensaje" class="form-control" rows="5"></textarea>
                 <span asp-validation-for="Mensaje" class="text-danger"></span>
             </div>
+
+            <!-- Campo oculto para almacenar algún dato adicional -->
+            
 
             <!-- Botón de Enviar -->
             <button type="submit" class="btn btn-success btn-lg px-3">Enviar</button>

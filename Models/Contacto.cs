@@ -19,6 +19,11 @@ namespace practica4.Models
         [NotNull]
         public string? Email { get; set; }
         [NotNull]
+        public string? Direccion { get; set; }
+        [NotNull]
+        public string? Telefono { get; set; }
+        
+        [NotNull]
         public string? Mensaje { get; set; }
 
         public string? Etiqueta { get; set; }
