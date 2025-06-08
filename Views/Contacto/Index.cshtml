@@ -1,0 +1,71 @@
+@model practica4.Models.Contacto
+
+@{
+    ViewData["Title"] = "Contacto";
+}
+
+<!-- Modal de búsqueda -->
+<div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="w-100 pt-1 mb-5 text-right">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form action="" method="get" class="modal-content modal-body border-0 p-0">
+            <div class="input-group mb-2">
+                <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
+                <button type="submit" class="input-group-text bg-success text-light">
+                    <i class="fa fa-fw fa-search text-white"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Contenido principal -->
+<div class="container-fluid bg-light py-5">
+    <div class="col-md-6 m-auto text-center">
+        <h1 class="h1">Formulario de Contacto</h1>
+    </div>
+</div>
+
+<!-- Formulario de contacto -->
+<div class="container py-5">
+    <div class="row py-5">
+        <form method="post" asp-action="Registrar">
+            <!-- Campo de Nombres -->
+            <div class="form-group">
+                <label asp-for="Nombres" class="control-label"></label>
+                <input asp-for="Nombres" class="form-control" />
+                <span asp-validation-for="Nombres" class="text-danger"></span>
+            </div>
+
+            <!-- Campo de Email -->
+            <div class="form-group mt-2">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <!-- Campo de Mensaje -->
+            <div class="form-group mt-2">
+                <label asp-for="Mensaje" class="control-label"></label>
+                <textarea asp-for="Mensaje" class="form-control" rows="5"></textarea>
+                <span asp-validation-for="Mensaje" class="text-danger"></span>
+            </div>
+
+            <!-- Botón de Enviar -->
+            <button type="submit" class="btn btn-success btn-lg px-3">Enviar</button>
+        </form>
+
+        <!-- Mensaje de éxito o error -->
+        <h1>@ViewData["Message"]</h1>
+    </div>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}
+
+<!-- Carga de estilos -->
+<link rel="stylesheet" href="~/css/bootstrap.min.css" asp-append-version="true">
+<link rel="stylesheet" href="~/css/templatemo.css" asp-append-version="true">
